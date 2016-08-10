@@ -104,7 +104,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 dfn {
@@ -266,7 +266,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -281,12 +281,17 @@ h6 {
 	clear: both;
 }
 
-h1{
-    font-family: 'Lemon', cursive;
-}
-
 p {
 	margin-bottom: 1.5em;
+    font-weight:200;
+}
+
+h1{
+    font-weight:800;
+}
+
+h2{
+    font-weight:600;
 }
 
 dfn,
@@ -355,7 +360,7 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: powderblue; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -413,6 +418,17 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+/* re-sizing and centering the site*/
+#page{
+    background-color: powderblue;
+}
+
+.site-content{
+    background-color: pink;
+    max-width: 800px;
+    margin: auto;
+}
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -504,15 +520,45 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+## Homepage
+--------------------------------------------------------------*/
+
+#welcome{
+    padding: 20vh;
+    height: 100vh;
+    text-align: center;
+    font-weight: 800;
+    font-size: 4em;
+    text-decoration: underline;
+    
+}
+
+.page-id-110 .site-branding{
+    display: none;
+}
+
+.page-id-110 .site-content{
+    background-color: peachpuff;
+    max-width: 100%;
+    margin:auto;
+}
+/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 
-.nav-menu{
-    max-width: 80%;
-    border: 1px solid pink;
+/*styling the navigation bar*/
+ul.nav-menu{
+    max-width: 100%;
+    background-color: black;
+    color:white;
+    
 }
+
 .nav-menu a{
-    padding: 0 10px;
+    padding: 0 2em;
+    display: block;
+    text-transform: uppercase;
+    
 }
 
 /*--------------------------------------------------------------
@@ -523,7 +569,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: teal;
 }
 
 a:hover,
@@ -544,26 +590,27 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
+
 .main-navigation {
 	clear: both;
 	display: block;
 	margin: auto;
-	width: 100%;
     padding: 0;
 }
 
+/*change this to change the top menu*/
 .main-navigation ul {
 	display: block;
     text-align: center;
 	list-style: none;
 	margin: auto;
-    padding: 0 2em;
+    padding: 1em 2em;
 }
 
 .main-navigation li {
-	float: right;
-	position: relative;
-    margin:auto;
+	display:inline-block;
+	position:relative;  
 }
 
 .main-navigation a {
@@ -572,13 +619,15 @@ a:active {
 }
 
 .main-navigation a:hover{
-    background-color: red;
+    background-color: steelblue;
+    color: white;
+    font-weight: 800;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
-	position: absolute;
+    position: absolute;
 	top: 1.5em;
 	left: -999em;
 	z-index: 99999;
@@ -594,7 +643,6 @@ a:active {
 }
 
 .main-navigation ul ul li {
-
 }
 
 .main-navigation li:hover > a,
@@ -639,6 +687,7 @@ a:active {
 	.main-navigation ul {
 		display: block;
 	}
+    
 }
 
 .site-main .comment-navigation,
@@ -708,6 +757,7 @@ a:active {
 	float: left;
 	margin-right: 1.5em;
 }
+
 
 .alignright {
 	display: inline;
@@ -790,7 +840,10 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: auto;
+    
+    padding: 2em;
+    
 }
 
 .page-links {
