@@ -1,17 +1,17 @@
 <?php
-function simfolio_submenu(){
+function cd_add_submenu(){
     add_submenu_page( 
         'themes.php', 
-        'Simfolio Theme Customization', 
+        'My Super Awesome Options Page', 
         'Theme Options', 
         'manage_options', 
         'theme_options', 
-        'simfolio_options');
+        'my_theme_options_page');
     }
 
-add_action( 'admin_menu', 'simfolio_submenu' );
+add_action( 'admin_menu', 'cd_add_submenu' );
 
-    function simfolio_settings_init(){
+    function ex_settings_init(){
 
         register_setting('theme_options', 'ex_options_settings');
 
@@ -37,7 +37,7 @@ add_action( 'admin_menu', 'simfolio_submenu' );
             $options = get_option('ex_options_settings');
             ?>
             
-        <input type="text" name="ex_options_settings[ex_text_field]" value="<?php if(isset($options['ex_text_field']))echo $options['ex_text_field'];?>"/>
+        <input type="text" name="ex_options_settings[ex_text_field]" value="<?php if(isset($options['ex_text_field']))echo   $options['ex_text_field'];?>"/>
         <?php
         }
 
@@ -92,7 +92,7 @@ add_action( 'admin_menu', 'simfolio_submenu' );
             ?>
 
         <textarea cols="40" rows="50" name="ex_options_settings[ex_textarea]">
-            <?php if(isset($options['ex_textarea'])) echo $otions['ex_textarea'];?>
+            <?php if(isset($options['ex_textarea'])) echo $options['ex_textarea'];?>
         </textarea>
         <?php
         }
@@ -118,7 +118,7 @@ add_action( 'admin_menu', 'simfolio_submenu' );
         <?php
         }
         
-        function simfolio_options(){
+        function my_theme_options_page(){
             ?>
             <form action="options.php" method="post">
                 <h2>My Awesome Options Page</h2>
@@ -132,4 +132,4 @@ add_action( 'admin_menu', 'simfolio_submenu' );
         }
 }
        
-add_action('admin_init','simfolio_settings_init');
+add_action('admin_init','ex_settings_init');

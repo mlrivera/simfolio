@@ -360,7 +360,7 @@ html {
 }
 
 body {
-	background: powderblue; /* Fallback for when there is no custom background color defined. */
+	background: #000; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -420,7 +420,7 @@ table {
 }
 /* re-sizing and centering the site*/
 #page{
-    background-color: powderblue;
+    background-color: #000;
 }
 
 .site-content{
@@ -437,25 +437,32 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	
+    /*border: 1px solid;*/
+	/*border-color: #ccc #ccc #bbb;*/
+	/*border-radius: 3px;*/
+	background: #000;
+	/*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);*/
+	color: #fff;
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	/*text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);*/
+}
+
+button:before{
+    font-family: 'FontAwesome';
+    content: '\f0c9';
+    font-size: 3em;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	/*border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);*/
 }
 
 button:focus,
@@ -466,8 +473,9 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	/*border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);*/
+    background-color: red;
 }
 
 input[type="text"],
@@ -524,24 +532,40 @@ textarea {
 --------------------------------------------------------------*/
 
 #welcome{
-    padding: 20vh;
-    height: 100vh;
+    /*padding-top: 20vh;*/
+    height: 100vh; /*makes this container the full width of the browser*/
     text-align: center;
     font-weight: 800;
-    font-size: 4em;
-    text-decoration: underline;
-    
+    font-size: 2em;
+    background-image: url('https://hd.unsplash.com/photo-1470299568568-d4e15c4b6472') 100vh;
 }
 
-.page-id-110 .site-branding{
+.greeting p{
+    font-family: 'Open Sans', sans-serif, Arial;
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 5px;
+    padding: 20vh;
+    margin: auto;
+    text-align: center;
+}
+
+#boxtwo{
+    height:100vh;
+    background-color: white;    
+}
+/*.page-id-110*/
+/*specifies only the body class for the homepage*/
+body.home .site-branding{
     display: none;
 }
 
-.page-id-110 .site-content{
+body.home .site-content{
     background-color: peachpuff;
     max-width: 100%;
     margin:auto;
 }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -680,14 +704,31 @@ a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 37.5em){
+    .menu-toggle{
+        display: none;
+    }
+}
+/*changed min-width to max-width*/
+@media screen and (max-width: 37.5em) {
 	.menu-toggle {
-		display: none;
+		display: block;
+        margin: auto;
+        border: none;
+        width: 100%;
 	}
 	.main-navigation ul {
-		display: block;
+		display: none;
+	}
+/* make menu as a vertical list*/
+    .main-navigation ul li {
+		width: 100%;
 	}
     
+    #welcome{
+        margin:auto;
+        font-size: 2em;
+    }
 }
 
 .site-main .comment-navigation,
