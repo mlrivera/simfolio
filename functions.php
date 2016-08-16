@@ -64,6 +64,9 @@ function simfolio_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    
+    // adding post formats
+    add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 }
 endif;
 add_action( 'after_setup_theme', 'simfolio_setup' );
@@ -145,3 +148,22 @@ require get_template_directory() . '/inc/jetpack.php';
 * Loads Theme Options Page
 */
 require get_stylesheet_directory() .'/inc/options.php';
+
+
+/**
+* Custom post type
+*/
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'portfolio_project',
+    array(
+      'labels' => array(
+        'name' => __( 'Portfolio' ),
+        'singular_name' => __( 'Project' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}

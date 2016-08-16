@@ -27,6 +27,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 # Elements
 # Forms
+# Landing Page
 # Navigation
 	## Links
 	## Menus
@@ -360,7 +361,7 @@ html {
 }
 
 body {
-	background: #000; /* Fallback for when there is no custom background color defined. */
+	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -420,11 +421,11 @@ table {
 }
 /* re-sizing and centering the site*/
 #page{
-    background-color: #000;
+    
 }
 
 .site-content{
-    background-color: pink;
+    background-color: #fff;
     max-width: 800px;
     margin: auto;
 }
@@ -528,7 +529,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## Homepage
+## Landing Page
 --------------------------------------------------------------*/
 
 #welcome{
@@ -537,7 +538,6 @@ textarea {
     text-align: center;
     font-weight: 800;
     font-size: 2em;
-    background-image: url('https://hd.unsplash.com/photo-1470299568568-d4e15c4b6472') 100vh;
 }
 
 .greeting p{
@@ -552,16 +552,27 @@ textarea {
 
 #boxtwo{
     height:100vh;
-    background-color: white;    
+    background-color: #fff;    
 }
 /*.page-id-110*/
-/*specifies only the body class for the homepage*/
+/*specifies only the body class for the landing page*/
 body.home .site-branding{
-    display: none;
+    font-size: 2em;
+    text-align: center;
+}
+
+body.home .site-title{
+    font-family: 'Open Sans', sans-serif, Trebuchet;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+body.home .site-title a{
+    text-decoration: none;
 }
 
 body.home .site-content{
-    background-color: peachpuff;
     max-width: 100%;
     margin:auto;
 }
@@ -573,8 +584,8 @@ body.home .site-content{
 /*styling the navigation bar*/
 ul.nav-menu{
     max-width: 100%;
-    background-color: black;
-    color:white;
+    background-color: rgba(0,0,0,0.2);
+    color:#fff;
     
 }
 
@@ -589,11 +600,11 @@ ul.nav-menu{
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #fff;
 }
 
 a:visited {
-	color: teal;
+	color: #444;
 }
 
 a:hover,
@@ -643,9 +654,8 @@ a:active {
 }
 
 .main-navigation a:hover{
-    background-color: steelblue;
-    color: white;
-    font-weight: 800;
+    border-bottom: 3px solid #fff;
+    color: #fff;
 }
 
 .main-navigation ul ul {
