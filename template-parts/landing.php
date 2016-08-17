@@ -5,27 +5,33 @@
 
 get_header(); ?>
    
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
             
-			<div id="welcome">
+			<div id="boxone">
                 <h1>Welcome</h1>
                 <!-- HOW TO ACTUALLY MAKE THE OPTIONS PAGE DO SOMETHING -->
-                <div class="greeting"><p><?php
-
-                $options = get_option('ex_options_settings');
-
-                echo $options['ex_text_field'] . '<br/>';
-                    ?></p>
+                <a href="index.php/<?php 
+                         //Allows theme users to link to any page on their site via page slug for a 'Call to Action'
+                $sfoptions = get_option('sf_options_settings');
+                echo $sfoptions['cta_pageslug'] 
+                         ?>"><p><?php 
+                        //Allows theme users to change the call to action's link text
+                $sfoptions = get_option('sf_options_settings');        
+                echo $sfoptions['cta_text']
+                         ?></p></a>
+                <div class="greeting"><p>enter greeting</p>
                 </div>
             </div>
                 
             <div id="boxtwo">
-                <p>Welcome</p>
+                <p>About</p>
             </div>
             <div id="boxthree">
-                <p>Welcome</p>
+                <p>Skillset</p>
             </div>
+            
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

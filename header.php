@@ -18,6 +18,15 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script src="https://use.fontawesome.com/24bb647442.js"></script>
 <!-- copied and placed font awesome script -->
+<style>
+       .site-title a, #boxone{
+           font-family:<?php 
+                        //Allows theme users to change the site title's font across all pages
+                $sfoptions = get_option('sf_options_settings');        
+                echo $sfoptions['masthead_font'];
+                         ?>
+       }   
+    </style>
 <?php wp_head(); ?>
 </head>
 

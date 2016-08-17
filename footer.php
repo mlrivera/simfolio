@@ -14,6 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        
+        <div class="twitter">
+            <a href="twitter.com"></a>
+        </div>
+        
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'simfolio' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'simfolio' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
