@@ -16,11 +16,11 @@ get_header(); ?>
                          //Allows theme users to link to any page on their site via page slug for a 'Call to Action'
                 $sfoptions = get_option('sf_options_settings');
                 echo $sfoptions['cta_pageslug'] 
-                         ?>"><p><?php 
+                         ?>" class="cta"><p><?php 
                         //Allows theme users to change the call to action's link text
                 $sfoptions = get_option('sf_options_settings');        
                 echo $sfoptions['cta_text']
-                         ?></p></a>
+                    ?></p></a>
                 <div class="greeting"><p>enter greeting</p>
                 </div>
             </div>

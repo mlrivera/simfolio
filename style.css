@@ -532,10 +532,9 @@ textarea {
 ## Landing Page
 --------------------------------------------------------------*/
 
-#welcome{
+#boxone{
     /*padding-top: 20vh;*/
     height: 100vh; /*makes this container the full width of the browser*/
-    text-align: center;
     font-weight: 800;
     font-size: 2em;
 }
@@ -551,30 +550,57 @@ textarea {
 }
 
 #boxtwo{
-    height:100vh;
-    background-color: #fff;    
+    height:100vh;    
 }
 /*.page-id-110*/
 /*specifies only the body class for the landing page*/
+body.home .site-header, .site-header{
+    padding: 0 0 5em;
+    background-image: url('/img/bg_person.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+
+
 body.home .site-branding{
-    font-size: 2em;
+    
     text-align: center;
+}
+
+.site-title a{
+    letter-spacing: 5px;
+    font-size: 1em;
+    color: red;
 }
 
 body.home .site-title{
     font-family: 'Open Sans', sans-serif, Trebuchet;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-weight:800;
+    font-size: 2.7em;
     letter-spacing: 5px;
 }
 
 body.home .site-title a{
     text-decoration: none;
+    color: pink; /*make custom*/
+}
+
+body.home .site-description{
+    color: #fff;
 }
 
 body.home .site-content{
     max-width: 100%;
     margin:auto;
+    background-color:blue;
+}
+
+body.home .site-main{
+    margin:auto;
+    max-width: 800px;
+    width: 80%;
+    color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -584,8 +610,8 @@ body.home .site-content{
 /*styling the navigation bar*/
 ul.nav-menu{
     max-width: 100%;
-    background-color: rgba(0,0,0,0.2);
-    color:#fff;
+    color: #000;
+    border-bottom: 1px solid black;
     
 }
 
@@ -639,7 +665,9 @@ a:active {
     text-align: center;
 	list-style: none;
 	margin: auto;
-    padding: 1em 2em;
+    padding: 1em 1em 0em;
+    letter-spacing: 4px;
+    line-height: 1.5em;
 }
 
 .main-navigation li {
@@ -650,11 +678,11 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+    color: #fff;
 }
 
 .main-navigation a:hover{
-    border-bottom: 3px solid #fff;
-    color: #fff;
+    border-bottom: 2px solid yellow;
 }
 
 .main-navigation ul ul {
@@ -863,10 +891,54 @@ a:active {
 	max-width: 100%;
 }
 
+/*fixing sidebar*/
+.widget-area{
+    float:right;
+}
+
+.site-main, .grid-wrap, .content-area{
+    float:left;
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Flex Grid
+--------------------------------------------------------------*/
+/* THIS IS THE CLASS THAT IS APPLIED TO THE UNORDERED LIST AND ACTS AS THE FLEX CONTAINER */
+
+.grid-wrap {
+	display: flex;			/* THIS MAKES IT A FLEX CONTAINER */
+	flex-flow: row wrap;		/* THIS MAKES EACH BLOG POST LINE UP HORIZONTALLY AND WRAP TO THE NEXT LINE */
+	align-items: left;		/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
+	justify-content: leftr;	/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
+	list-style: none;		/* THIS REMOVES THE BULLET POINT FOR EACH LIST ITEM */
+}
+
+/* THIS IS THE CLASS FOR EACH LIST ITEM */
+
+.grid-item {
+	flex-basis: 200px;	/* WIDTH OF EACH ITEM - ADJUST FOR YOUR OWN PURPOSES */
+	height: 300px;		/* HEIGHT OF EACH ITEM - ADJUST FOR YOUR OWN PURPOSES */
+	padding: 10px;		/* SET WHATEVER PADDING VALUE YOU WANT */
+	margin: 10px;		/* SET WHATEVER MARGIN VALUE YOU WANT */
+}
+
+/* USE THIS TO MAKE THE FEATURED IMAGES BEHAVE PROPERLY ACROSS ALL DEVICES */
+
+.grid-item img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;	/* SET WHATEVER SIZE VALUE YOU WANT */
+}
+
+/* YOU MIGHT NEED THIS TO FIX THE TYPICAL INDENTION BEHAVIOR OF UNORDERED LISTS */
+
+.grid-wrap ul {
+	margin-left: 0;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

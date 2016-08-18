@@ -51,6 +51,28 @@ function sf_settings_init(){
         <p></p>
         <?php
         }
+
+//selectbox to change the text style of the masthead title
+        add_settings_field(
+            'masthead_title',
+            'Choose a Title Style',
+            'sf_masttransform',
+            'theme_options',
+            'sf_options_section');
+        
+        function sf_masttransform(){
+            $sfoptions = get_option('sf_options_settings');
+            ?>
+        
+        <select name="sf_options_settings[masthead_title]">
+            <option value="uppercase" <?php if(isset($sfoptions['masthead_title'])) selected($sfoptions['masthead_title'], 1); ?>>Uppercase</option>
+            
+            <option value="lowercase" <?php if(isset($sfoptions['masthead_title'])) selected($sfoptions['masthead_title'], 2); ?>>Lowercase</option>
+            
+            <option value="capitalize" <?php if(isset($sfoptions['masthead_title'])) selected($sfoptions['masthead_title'], 3); ?>>Capitalize</option>
+        </select>
+        <?php
+        }
     
 //selectbox to change the font of the masthead
         add_settings_field(
@@ -65,13 +87,16 @@ function sf_settings_init(){
             ?>
         
         <select name="sf_options_settings[masthead_font]">
-            <option value="'Knewave'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 1); ?>>Knewave Font</option>
+            <option value="'Open Sans'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 1); ?>>Open Sans [Default Font]</option>
             
             <option value="'Megrim'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 2); ?>>Megrim Font</option>
             
             <option value="'Yeseva One'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 3); ?>>Yeseva One Font</option>
             
             <option value="'Serina'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 4); ?>>Serina Font</option>
+            
+            <option value="'Knewave'" <?php if(isset($sfoptions['masthead_font'])) selected($sfoptions['masthead_font'], 5); ?>>Knewave Font</option>
+            
         </select>
         <?php
         }
