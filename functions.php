@@ -149,6 +149,24 @@ require get_template_directory() . '/inc/jetpack.php';
 */
 require get_stylesheet_directory() .'/inc/options.php';
 
+/**
+* Add New Thumbnail Size
+*/
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'grid-thumb', 230, 152, true );
+}
+//Made new size selectable
+
+add_filter( 'image_size_names_choose', 'grid_custom_size' );
+ 
+function grid_custom_size( $sizes ) {
+    return array_merge( $sizes, array(
+        'grid-thumb' => __( 'Grid Size' ),
+    ) );
+}
+
 
 /**
 * Custom post type
@@ -156,7 +174,7 @@ require get_stylesheet_directory() .'/inc/options.php';
 
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
-  register_post_type( 'portfolio_project',
+  register_post_type( 'projects',
     array(
       'labels' => array(
         'name' => __( 'Portfolio' ),
