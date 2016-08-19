@@ -893,7 +893,8 @@ a:active {
 
 /*fixing sidebar*/
 .widget-area{
-    float:right;
+    clear:both;
+    
 }
 
 .site-main, .grid-wrap, .content-area{
@@ -904,16 +905,24 @@ a:active {
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Flex Grid
+# Flex Grid Page
 --------------------------------------------------------------*/
 /* THIS IS THE CLASS THAT IS APPLIED TO THE UNORDERED LIST AND ACTS AS THE FLEX CONTAINER */
+.grid-nav{
+    margin: auto;
+    clear:both;
+}
 
+.grid-older{
+    
+}
 .grid-wrap {
 	display: flex;			/* THIS MAKES IT A FLEX CONTAINER */
 	flex-flow: row wrap;		/* THIS MAKES EACH BLOG POST LINE UP HORIZONTALLY AND WRAP TO THE NEXT LINE */
 	align-items: left;		/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
 	justify-content: leftr;	/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
 	list-style: none;		/* THIS REMOVES THE BULLET POINT FOR EACH LIST ITEM */
+    margin: 0 30px;
 }
 
 /* THIS IS THE CLASS FOR EACH LIST ITEM */

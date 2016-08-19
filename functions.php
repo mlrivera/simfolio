@@ -151,22 +151,15 @@ require get_stylesheet_directory() .'/inc/options.php';
 
 /**
 * Add New Thumbnail Size
+* Referenced: https://developer.wordpress.org/reference/functions/add_image_size/
+and
+https://codex.wordpress.org/Post_Thumbnails
 */
 
-add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
-function wpdocs_theme_setup() {
-    add_image_size( 'grid-thumb', 230, 152, true );
+add_action( 'after_setup_theme', 'grid_image' );
+function grid_image() {
+    add_image_size( 'grid-thumb', 300, 200, true );
 }
-//Made new size selectable
-
-add_filter( 'image_size_names_choose', 'grid_custom_size' );
- 
-function grid_custom_size( $sizes ) {
-    return array_merge( $sizes, array(
-        'grid-thumb' => __( 'Grid Size' ),
-    ) );
-}
-
 
 /**
 * Custom post type
