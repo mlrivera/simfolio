@@ -14,9 +14,12 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-        
-        <div class="twitter">
-            <a href="twitter.com"></a>
+        <p>Reach me at</p>
+        <div class="socialmedia">
+            <a href="http://www.twitter.com" class="tw"></a>
+            <a href="http://www.facebook.com" class="fb"></a>
+            <a href="http://www.instagram.com" class="insta"></a>
+            <a href="http://www.behance.com" class="behance"></a>
         </div>
         
 		<div class="site-info">

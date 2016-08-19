@@ -77,7 +77,7 @@ function sf_settings_init(){
 //selectbox to change the font of the masthead
         add_settings_field(
             'masthead_font',
-            'Choose a Font',
+            'Choose a Title Font',
             'sf_masttext_font',
             'theme_options',
             'sf_options_section');

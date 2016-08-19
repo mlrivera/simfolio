@@ -13,8 +13,8 @@ get_header(); ?>
     <?php  
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array( 
-            'showposts' => 6, 
-            'cat'=> 10,
+            'posts_per_page' => 4, 
+            'category_name'=> 'gallery',
             'order' => 'ASC',
             'post_type' => 'post',
             'suppress_filters'=>true,

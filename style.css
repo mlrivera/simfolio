@@ -532,29 +532,42 @@ textarea {
 ## Landing Page
 --------------------------------------------------------------*/
 
+
+
 #boxone{
-    /*padding-top: 20vh;*/
-    height: 100vh; /*makes this container the full width of the browser*/
-    font-weight: 800;
-    font-size: 2em;
+    background-color: #fff;
 }
 
-.greeting p{
-    font-family: 'Open Sans', sans-serif, Arial;
-    font-weight: 500;
-    font-size: 1em;
-    letter-spacing: 5px;
-    padding: 20vh;
-    margin: auto;
-    text-align: center;
+#boxone a:hover{
+    background-color: #000;
+    border: 2px solid red;
+    color: red;
 }
 
 #boxtwo{
-    height:100vh;    
+    background-color: #000;  
 }
-/*.page-id-110*/
+#boxthree{
+    background-color: pink;
+}
 /*specifies only the body class for the landing page*/
-body.home .site-header, .site-header{
+
+body.home .site-main, body.home .content-area, body.home {
+    float:none;
+    width:100%;
+}
+
+body.home .site-content{
+    max-width: 100%;
+    margin:auto;
+    background-color:#fff;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.site-header, .site-header{
     padding: 0 0 5em;
     background-image: url('/img/bg_person.jpg');
     background-size: cover;
@@ -563,7 +576,7 @@ body.home .site-header, .site-header{
 }
 
 
-body.home .site-branding{
+.site-branding{
     
     text-align: center;
 }
@@ -574,69 +587,56 @@ body.home .site-branding{
     color: red;
 }
 
-body.home .site-title{
+.site-title{
     font-family: 'Open Sans', sans-serif, Trebuchet;
     font-weight:800;
     font-size: 2.7em;
     letter-spacing: 5px;
 }
 
-body.home .site-title a{
+.site-title a{
     text-decoration: none;
-    color: pink; /*make custom*/
+    color: pink; 
 }
 
-body.home .site-description{
+.site-description{
     color: #fff;
-}
-
-body.home .site-content{
-    max-width: 100%;
-    margin:auto;
-    background-color:blue;
-}
-
-body.home .site-main{
-    margin:auto;
-    max-width: 800px;
-    width: 80%;
-    color: #fff;
+    font-size: 1.7em;
+    font-weight: 100;
 }
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 
-/*styling the navigation bar*/
-ul.nav-menu{
-    max-width: 100%;
-    color: #000;
-    border-bottom: 1px solid black;
-    
-}
 
-.nav-menu a{
-    padding: 0 2em;
-    display: block;
-    text-transform: uppercase;
-    
-}
 
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
 	color: #000;
+    text-decoration: none;
 }
 
-a:visited {
-	color: #444;
+.entry-title a{
+    text-transform: capitalize;
 }
 
+.entry-title a:hover{
+    border:none;
+}
+.site-title a:visited {
+	color: pink;
+}
+
+a:visited{
+    color: #444;
+}
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	border-bottom: 4px solid black;
 }
 
 a:focus {
@@ -648,9 +648,25 @@ a:active {
 	outline: 0;
 }
 
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
+/*styling the navigation bar*/
+ul.nav-menu{
+    max-width: 100%;
+    color: #000;
+    border-bottom: 1px solid black;
+    
+}
+
+.nav-menu a{
+    margin: 0 2em;
+    display: block;
+    text-transform: uppercase;
+    
+}
 
 .main-navigation {
 	clear: both;
@@ -679,10 +695,11 @@ a:active {
 	display: block;
 	text-decoration: none;
     color: #fff;
+    border-bottom: 2px solid rgba(0,0,0,0);
 }
 
 .main-navigation a:hover{
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid pink
 }
 
 .main-navigation ul ul {
@@ -762,7 +779,7 @@ a:active {
 		width: 100%;
 	}
     
-    #welcome{
+    #boxone{
         margin:auto;
         font-size: 2em;
     }
@@ -899,23 +916,58 @@ a:active {
 
 .site-main, .grid-wrap, .content-area{
     float:left;
+    margin-top: 1.5em;
 }
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.entry-title{
+    border-bottom: 2px solid pink;
+    padding: 0 0 0 15px;
+    font-weight: 700;
+}
+
+.entry-meta, .entry-footer{
+    padding: 0 0 0 15px;
+}
+
+.entry-footer a{
+    padding: 0 5px;
+    font-weight: 600;
+}
+.entry-content{
+    padding: 10px 15px;
+}
 
 /*--------------------------------------------------------------
 # Flex Grid Page
 --------------------------------------------------------------*/
-/* THIS IS THE CLASS THAT IS APPLIED TO THE UNORDERED LIST AND ACTS AS THE FLEX CONTAINER */
+/* Referenced this flexible grid tutorial:
+https://www.zenwebthemes.com/blog/create-grid-layout-wordpress-flexbox/*/
 .grid-nav{
     margin: auto;
     clear:both;
 }
 
 .grid-older{
-    
+    float: left;
 }
+
+.grid-older a, .grid-newer a{
+    text-decoration: none;
+    padding: 5px;
+}
+
+.grid-newer{
+    float: right;
+}
+
+.grid-older a:hover, .grid-newer a:hover{
+    padding: 5px;
+    color: #000;
+    border-bottom: 3px solid pink;
+}
+
 .grid-wrap {
 	display: flex;			/* THIS MAKES IT A FLEX CONTAINER */
 	flex-flow: row wrap;		/* THIS MAKES EACH BLOG POST LINE UP HORIZONTALLY AND WRAP TO THE NEXT LINE */
@@ -940,23 +992,78 @@ a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 400px;	/* SET WHATEVER SIZE VALUE YOU WANT */
+	max-width: 500px;	/* SET WHATEVER SIZE VALUE YOU WANT */
 }
 
-/* YOU MIGHT NEED THIS TO FIX THE TYPICAL INDENTION BEHAVIOR OF UNORDERED LISTS */
-
-.grid-wrap ul {
-	margin-left: 0;
-}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.twitter a:before{
-    font-family: 'FontAwesome';
-    content: '\f081';
-    font-size: 3em;
-    display: inline-block;}
 
+.site-footer{
+    background-color: #000;
+    height: 170px;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.site-footer p, .site-info{
+    color: #fff;
+}
+
+.site-footer p{   
+    letter-spacing: 2px;
+    font-size: 1em;
+    border: 4px solid #fff;
+    padding: 5px;
+    width: 200px;
+    margin:auto;
+    text-transform: uppercase;
+    font-weight:600;
+}
+
+
+
+.socialmedia{
+    font-family: 'FontAwesome';
+    font-size: 2em;
+    margin:auto;
+    clear:both;
+    padding-bottom: 5px;
+    
+}
+
+.socialmedia a{
+    display: inline-block;
+    color: pink;
+    padding: 2px;
+    border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+.socialmedia a:hover{
+    border-bottom: 2px solid pink;
+    
+}
+
+a.tw:before{
+    font-family: 'FontAwesome';
+    content: '\f099';
+}
+
+a.fb:before{
+    font-family: 'FontAwesome';
+    content: '\f09a';
+}
+
+a.insta:before{
+    font-family: 'FontAwesome';
+    content: '\f16d';
+}
+
+a.behance:before{
+    font-family: 'FontAwesome';
+    content: '\f1b4';
+}
 /** Adding social media icons**/
 
 
@@ -986,8 +1093,6 @@ a:active {
 .entry-content,
 .entry-summary {
 	margin: auto;
-    
-    padding: 2em;
     
 }
 
