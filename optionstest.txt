@@ -112,7 +112,7 @@ function sf_cta_init(){
             $options = get_option('ex_options_settings');
             ?>
 
-        <textarea cols="40" rows="50" name="ex_options_settings[ex_textarea]">
+        <textarea cols="5" rows="60" name="ex_options_settings[ex_textarea]">
             <?php if(isset($options['ex_textarea'])) echo $options['ex_textarea'];?>
         </textarea>
         <?php

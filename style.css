@@ -27,7 +27,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 # Elements
 # Forms
-# Landing Page
+# Pages
+    ## Landing Page
+    ## Flex Grid Page
 # Navigation
 	## Links
 	## Menus
@@ -119,7 +121,7 @@ h1 {
 
 mark {
 	background: #ff0;
-	color: #000;
+	color: #0F1314;
 }
 
 small {
@@ -285,6 +287,7 @@ h6 {
 p {
 	margin-bottom: 1.5em;
     font-weight:200;
+    color: #1B3842;
 }
 
 h1{
@@ -442,7 +445,7 @@ input[type="submit"] {
     /*border: 1px solid;*/
 	/*border-color: #ccc #ccc #bbb;*/
 	/*border-radius: 3px;*/
-	background: #000;
+	background: #0F1314;
 	/*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);*/
 	color: #fff;
 	font-size: 12px;
@@ -476,7 +479,6 @@ input[type="reset"]:active,
 input[type="submit"]:active {
 	/*border-color: #aaa #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);*/
-    background-color: red;
 }
 
 input[type="text"],
@@ -529,6 +531,87 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Flex Grid Page
+--------------------------------------------------------------*/
+/* Referenced this flexible grid tutorial:
+https://www.zenwebthemes.com/blog/create-grid-layout-wordpress-flexbox/*/
+
+h2.post-title{
+    border-bottom: 4px solid #9BDBCB;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+.grid-wrap p{
+    font-size: 0.8em;
+    font-weight:700; 
+}
+
+.grid-wrap a{
+    font-weight: 400;
+}
+
+.grid-wrap a:hover{
+    font-weight: 400;
+    font-style: italic;
+}
+
+.grid-nav{
+    margin: auto;
+    clear:both;
+}
+
+.grid-older a, .grid-newer a{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.grid-older, .grid-newer{
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.grid-older a:hover, .grid-newer a:hover{
+    padding: 5px;
+    color: #0F1314;
+    border-bottom: 3px solid #9BDBCB;
+    font-weight: 700;
+}
+
+.grid-wrap {
+	display: flex;			
+	flex-flow: row wrap;	
+	align-items: center;	
+	justify-content: center;
+    margin: 0 30px;
+}
+
+/* THIS IS THE CLASS FOR EACH LIST ITEM */
+
+.grid-item {
+	flex-basis: 200px;
+	height: 300px;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* USE THIS TO MAKE THE FEATURED IMAGES BEHAVE PROPERLY ACROSS ALL DEVICES */
+
+.grid-item img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;	/* SET WHATEVER SIZE VALUE YOU WANT */
+}
+
+
+
+/*--------------------------------------------------------------
 ## Landing Page
 --------------------------------------------------------------*/
 
@@ -536,20 +619,91 @@ textarea {
 
 #boxone{
     background-color: #fff;
+    padding: 10px 30px 100px;
+    max-width: 100%;
+}
+#boxone h1{
+    font-size: 2.5em;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+    font-weight: 200;
+    margin-top: 30px;
 }
 
-#boxone a:hover{
-    background-color: #000;
-    border: 2px solid red;
-    color: red;
+#cta{
+    font-size: 2em;
+    width: 40%;
+    margin:auto;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+#cta a{
+    border: 5px solid #9BDBCB;
+    padding: 15px;
+    margin: 2px;
+    color: #9BDBCB;
+    
+}
+
+#cta a:hover{
+    background-color: #9BDBCB;
+    color: #fff;
+}
+
+#boxone:after{
+    clear:both;
 }
 
 #boxtwo{
-    background-color: #000;  
+    background-color: #1B3842;
+    padding: 10px 30px 100px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 300px;
+    width: 50%;
+    float: left;
+    border-bottom: 5px solid #9BDBCB;
+    border-top: 5px solid #1B3842;
 }
+
+#boxtwo, #boxtwo p{
+    color: #9BDBCB;
+}
+
+#boxtwo h1, #boxthree h1{
+    border-bottom: 10px solid #fff;
+}
+
 #boxthree{
-    background-color: pink;
+    background-color: #9BDBCB;
+    padding: 10px 30px 100px;
+    max-width: 100%;
+    height: 300px;
+    width:50%;
+    float:right;
+    color: #1B3842;
+    border-bottom: 5px solid #9BDBCB;
+    border-top: 5px solid #1B3842;
 }
+
+#boxthree li:before{
+    font-family: 'FontAwesome';
+    content: '\f005 ';
+    color: #fff;
+    list-style-type: none;
+}
+
+#boxthree ul{
+    list-style-type: none;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
 /*specifies only the body class for the landing page*/
 
 body.home .site-main, body.home .content-area, body.home {
@@ -572,7 +726,7 @@ body.home .site-content{
     background-image: url('/img/bg_person.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #000;
+    background-color: #0F1314;
 }
 
 
@@ -596,7 +750,7 @@ body.home .site-content{
 
 .site-title a{
     text-decoration: none;
-    color: pink; 
+    color: #9BDBCB; 
 }
 
 .site-description{
@@ -615,7 +769,7 @@ body.home .site-content{
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #000;
+	color: #0F1314;
     text-decoration: none;
 }
 
@@ -627,16 +781,16 @@ a {
     border:none;
 }
 .site-title a:visited {
-	color: pink;
+	color: #9BDBCB;
 }
 
 a:visited{
-    color: #444;
+    color: #CFDBD5;
 }
 a:hover,
 a:focus,
 a:active {
-	border-bottom: 4px solid black;
+	border-bottom: 4px solid #0F1314;
 }
 
 a:focus {
@@ -656,16 +810,14 @@ a:active {
 /*styling the navigation bar*/
 ul.nav-menu{
     max-width: 100%;
-    color: #000;
-    border-bottom: 1px solid black;
-    
+    color: #0F1314;
+    border-bottom: 1px solid #0F1314;
 }
 
 .nav-menu a{
     margin: 0 2em;
     display: block;
     text-transform: uppercase;
-    
 }
 
 .main-navigation {
@@ -699,7 +851,7 @@ ul.nav-menu{
 }
 
 .main-navigation a:hover{
-    border-bottom: 2px solid pink
+    border-bottom: 2px solid #9BDBCB
 }
 
 .main-navigation ul ul {
@@ -778,11 +930,7 @@ ul.nav-menu{
     .main-navigation ul li {
 		width: 100%;
 	}
-    
-    #boxone{
-        margin:auto;
-        font-size: 2em;
-    }
+
 }
 
 .site-main .comment-navigation,
@@ -843,6 +991,33 @@ ul.nav-menu{
 #content[tabindex="-1"]:focus {
 	outline: 0;
 }
+
+/*Responsive code*/
+@media screen and (max-width: 56.25em){
+    #cta, #cta a{
+        max-width:100%;
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 37.5em){
+    #boxone, #boxtwo, #boxthree{
+        float: none;
+        max-width: 100%;
+        width: 100%;
+        display: block;
+    }
+    
+    body.home .site-main, #boxone h1,#boxtwo h1,#boxthree h1, #boxtwo p, #boxthree ul, #boxthree li, #cta, #cta a{
+        font-size: 1em;
+    }
+    
+    #cta, #cta a{
+        max-width:100%;
+        width:100%;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # Alignments
@@ -922,7 +1097,7 @@ ul.nav-menu{
 # Content
 --------------------------------------------------------------*/
 .entry-title{
-    border-bottom: 2px solid pink;
+    border-bottom: 2px solid #9BDBCB;
     padding: 0 0 0 15px;
     font-weight: 700;
 }
@@ -940,69 +1115,12 @@ ul.nav-menu{
 }
 
 /*--------------------------------------------------------------
-# Flex Grid Page
---------------------------------------------------------------*/
-/* Referenced this flexible grid tutorial:
-https://www.zenwebthemes.com/blog/create-grid-layout-wordpress-flexbox/*/
-.grid-nav{
-    margin: auto;
-    clear:both;
-}
-
-.grid-older{
-    float: left;
-}
-
-.grid-older a, .grid-newer a{
-    text-decoration: none;
-    padding: 5px;
-}
-
-.grid-newer{
-    float: right;
-}
-
-.grid-older a:hover, .grid-newer a:hover{
-    padding: 5px;
-    color: #000;
-    border-bottom: 3px solid pink;
-}
-
-.grid-wrap {
-	display: flex;			/* THIS MAKES IT A FLEX CONTAINER */
-	flex-flow: row wrap;		/* THIS MAKES EACH BLOG POST LINE UP HORIZONTALLY AND WRAP TO THE NEXT LINE */
-	align-items: left;		/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
-	justify-content: leftr;	/* YOU CAN CHOOSE DIFFERENT VALUES HERE */
-	list-style: none;		/* THIS REMOVES THE BULLET POINT FOR EACH LIST ITEM */
-    margin: 0 30px;
-}
-
-/* THIS IS THE CLASS FOR EACH LIST ITEM */
-
-.grid-item {
-	flex-basis: 200px;	/* WIDTH OF EACH ITEM - ADJUST FOR YOUR OWN PURPOSES */
-	height: 300px;		/* HEIGHT OF EACH ITEM - ADJUST FOR YOUR OWN PURPOSES */
-	padding: 10px;		/* SET WHATEVER PADDING VALUE YOU WANT */
-	margin: 10px;		/* SET WHATEVER MARGIN VALUE YOU WANT */
-}
-
-/* USE THIS TO MAKE THE FEATURED IMAGES BEHAVE PROPERLY ACROSS ALL DEVICES */
-
-.grid-item img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 500px;	/* SET WHATEVER SIZE VALUE YOU WANT */
-}
-
-/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .site-footer{
-    background-color: #000;
+    background-color: #0F1314;
     height: 170px;
-    margin-top: 50px;
     text-align: center;
     padding-top: 20px;
 }
@@ -1035,13 +1153,13 @@ https://www.zenwebthemes.com/blog/create-grid-layout-wordpress-flexbox/*/
 
 .socialmedia a{
     display: inline-block;
-    color: pink;
+    color: #9BDBCB;
     padding: 2px;
     border-bottom: 2px solid rgba(0,0,0,0);
 }
 
 .socialmedia a:hover{
-    border-bottom: 2px solid pink;
+    border-bottom: 2px solid #9BDBCB;
     
 }
 

@@ -160,21 +160,3 @@ add_action( 'after_setup_theme', 'grid_image' );
 function grid_image() {
     add_image_size( 'grid-thumb', 300, 200, true );
 }
-
-/**
-* Custom post type
-*/
-
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-  register_post_type( 'projects',
-    array(
-      'labels' => array(
-        'name' => __( 'Portfolio' ),
-        'singular_name' => __( 'Project' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-    )
-  );
-}

@@ -101,6 +101,78 @@ function sf_settings_init(){
         <?php
         }
     
+//textarea for about me
+        add_settings_field(
+            'aboutme',
+            'Enter content for your About Me',
+            'aboutme_text',
+            'theme_options',
+            'sf_options_section');
+        
+        function aboutme_text(){
+            $sfoptions = get_option('sf_options_settings');
+            ?>
+
+        <textarea cols="60" rows="5" name="sf_options_settings[aboutme]">
+            <?php if(isset($sfoptions['aboutme'])) echo $sfoptions['aboutme'];?>
+        </textarea>
+        <?php
+        }
+    
+    //textarea for Skill 1
+        add_settings_field(
+            'first_skill',
+            'Enter One Skill',
+            'firstskill_text',
+            'theme_options',
+            'sf_options_section');
+        
+        function firstskill_text(){
+            $sfoptions = get_option('sf_options_settings');
+            ?>
+
+        <textarea cols="60" rows="1" name="sf_options_settings[first_skill]">
+            <?php if(isset($sfoptions['first_skill'])) echo $sfoptions['first_skill'];?>
+        </textarea>
+        <?php
+        }
+    
+    //textarea for Skill 2
+        add_settings_field(
+            'second_skill',
+            'Enter Your 1st Skill',
+            'secondskill_text',
+            'theme_options',
+            'sf_options_section');
+        
+        function secondskill_text(){
+            $sfoptions = get_option('sf_options_settings');
+            ?>
+
+        <textarea cols="60" rows="1" name="sf_options_settings[second_skill]">
+            <?php if(isset($sfoptions['second_skill'])) echo $sfoptions['second_skill'];?>
+        </textarea>
+        <?php
+        }
+    
+    //textarea for Skill 2
+        add_settings_field(
+            'third_skill',
+            'Enter Your 1st Skill',
+            'thirdskill_text',
+            'theme_options',
+            'sf_options_section');
+        
+        function thirdskill_text(){
+            $sfoptions = get_option('sf_options_settings');
+            ?>
+
+        <textarea cols="60" rows="1" name="sf_options_settings[third_skill]">
+            <?php if(isset($sfoptions['third_skill'])) echo $sfoptions['third_skill'];?>
+        </textarea>
+        <?php
+        }
+    
     function sf_options_page(){
             ?>
             <form action="options.php" method="post">
@@ -113,6 +185,8 @@ function sf_settings_init(){
             </form>
         <?php
         }
+    
+    
 }
 
 add_action('admin_init', 'sf_settings_init');
