@@ -122,7 +122,7 @@ function sf_settings_init(){
     //textarea for Skill 1
         add_settings_field(
             'first_skill',
-            'Enter One Skill',
+            'Enter Your 1st Skill',
             'firstskill_text',
             'theme_options',
             'sf_options_section');
@@ -140,7 +140,7 @@ function sf_settings_init(){
     //textarea for Skill 2
         add_settings_field(
             'second_skill',
-            'Enter Your 1st Skill',
+            'Enter Your 2nd Skill',
             'secondskill_text',
             'theme_options',
             'sf_options_section');
@@ -158,7 +158,7 @@ function sf_settings_init(){
     //textarea for Skill 2
         add_settings_field(
             'third_skill',
-            'Enter Your 1st Skill',
+            'Enter Your 3rd Skill',
             'thirdskill_text',
             'theme_options',
             'sf_options_section');

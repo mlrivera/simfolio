@@ -563,6 +563,7 @@ h2.post-title{
 .grid-nav{
     margin: auto;
     clear:both;
+    margin-bottom: 20px;
 }
 
 .grid-older a, .grid-newer a{
